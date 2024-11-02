@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con{
+            width: 330px;
+            min-height: 60px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #ae41fc;
+            font-size: 40px;
+            font-weight: 900;
+            border-radius: 20px;
+            margin: 100px;
+            color: rgb(255, 255, 255);
+        
+        }
+        /* #price{
+            width: 330px;
+            min-height: 60px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #ae41fc;
+            font-size: 40px;
+            font-weight: 900;
+            border-radius: 20px;
+            margin: 100px;
+            color: rgb(255, 255, 255);
+        } */
+    </style>
+
+</head>
+<body>
+    <div class="con">
+        <div id="mins">-</div>
+        <div id="num">0</div>
+        <div id="plus">+</div>
+        <div id="price">00</div>
+    </div>
+    <!-- <div class="main"></div> -->
+    <!-- <div id="price">price</div> -->
+    <script>
+        var mins = document.getElementById('mins');
+        var num = document.getElementById('num');
+        var plus = document.getElementById('plus');
+        var price = document.getElementById('price');
+        var a =0;
+        var p =250;
+        mins.addEventListener('click', function(){
+            a--;
+            a
+            num.textContent = a;
+        })
+        plus.addEventListener('click', function(){
+            a++;
+            num.textContent = a;
+            price.textContent = a*p;
+        })
+       
+     
+    </script>
+</body>
+</html>

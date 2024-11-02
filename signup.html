@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<body>
+    <form action="signin.html" onsubmit="signup()">
+        <input type="text" id="fname" placeholder="Enter Your Name" required>
+        <input type="email" id="femail" placeholder="Enter Your Email" required>
+        <input type="password" id="fpass" placeholder="Enter Your Password" required>
+        <button type="submit">Sign Up</button>
+    </form>
+    <script>
+        function signup() {
+            event.preventDefault(); // Prevent form from navigating away immediately
+            var name = document.getElementById('fname').value;
+            var email = document.getElementById('femail').value;
+            var pass = document.getElementById('fpass').value;
+            localStorage.setItem('name', name);
+            localStorage.setItem('email', email);
+            localStorage.setItem('password', pass);
+            alert("Sign-up Successful! You can now sign in.");
+            window.location.href = 'signin.html';
+        }
+    </script>
+</body>
+</html>

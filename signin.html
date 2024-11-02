@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+</head>
+<body>
+    <form action="#" onsubmit="signin()">
+        <input type="email" id="femail" placeholder="Enter Your Email" required>
+        <input type="password" id="fpass" placeholder="Enter Your Password" required>
+        <button type="submit">Sign In</button>
+    </form>
+    <script>
+        function signin() {
+            event.preventDefault(); // Prevent form submission
+            var email = document.getElementById('femail').value;
+            var pass = document.getElementById('fpass').value;
+
+            var storedEmail = localStorage.getItem('email');
+            var storedPass = localStorage.getItem('password');
+
+            if (email && pass) {
+                if (email === storedEmail && pass === storedPass) {
+                    alert("Login Successful");
+                    window.location.href = 'index.html';
+                } else {
+                    alert("Login Failed. Please check your credentials.");
+                }
+            } else {
+                alert("Please fill in the required fields.");
+            }
+        }
+    </script>
+</body>
+</html>

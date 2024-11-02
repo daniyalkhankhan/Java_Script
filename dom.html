@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" name="" id="fname" placeholder="Enter Name">
+    <p id="print"></p>
+    <button type="submit" onclick="print()">Submit</button>
+    <script>
+        function print() {
+document.getElementById('print').innerHTML = name;
+  document.getElementById('print').style.color="blue"
+  document.getElementById('print').style.border="ridge 2px gray"
+  document.getElementById('print').style.width="63px"
+  document.getElementById('print').style.fontSize="20px"
+     var name = document.getElementById('fname').value;
+  var exp = /^[A-z0-9@.]{1,30}$/gm;
+  if (exp.test(name)) {
+ document.getElementById('print').innerHTML = name;
+ document.getElementById('print').style.color="green"
+  } else {
+ document.getElementById('print').innerHTML = "incorrect";
+ document.getElementById('print').style.color="red";
+  }
+    var name = document.getElementById('fname').value;
+ var exp =/^[0-9]{0,11}$/gm;
+ if (exp.test(name)) {
+ document.getElementById('print').innerHTML = "Correct" ;
+document.getElementById('print').style.color="green"
+ } else {
+document.getElementById('print').innerHTML = "incorrect";
+document.getElementById('print').style.color="red";
+ }
+        }
+    </script>
+</body>
+</html>

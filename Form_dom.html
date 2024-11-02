@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type="email"], input[type="number"], input[type="text"] {
+            height: 30px;
+            border-radius: 10px;
+            border: 1px solid rgb(177, 171, 171);
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #00b7ff;
+            border: none;
+            width: 18.9%;
+            height: 40px;
+            border-radius: 10px;
+            font-size: 15px;
+            margin-left: 550px;
+        }
+        .display {
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+            margin-left: 550px;
+            margin-top: 180px;
+            grid-gap: 5px;
+        }
+        .feedback {
+            font-size: 14px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="display">
+        <label for="fname">Name:</label>
+        <input type="text" id="fname" placeholder="Enter Name">
+        <p id="nameFeedback" class="feedback"></p>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter Email">
+        <p id="emailFeedback" class="feedback"></p>
+
+        <label for="phone">Phone:</label>
+        <input type="number" id="phone" placeholder="Enter Number">
+        <p id="phoneFeedback" class="feedback"></p>
+    </div>
+    <button type="submit" onclick="validate()">Submit</button>
+
+    <script>
+        function validate() {
+            // Name validation
+            var name = document.getElementById('fname').value;
+            var nameExp = /^[A-Za-z\s]+$/;
+            if (nameExp.test(name)) {
+                document.getElementById('nameFeedback').innerHTML = "Correct";
+                document.getElementById('nameFeedback').style.color = "green";
+            } else {
+                document.getElementById('nameFeedback').innerHTML = "Incorrect";
+                document.getElementById('nameFeedback').style.color = "red";
+            }
+
+            // Email validation
+            var email = document.getElementById('email').value;
+            var emailExp = /^[\w\.-]+@[\w\.-]+\.\w{2,4}$/;
+            if (emailExp.test(email)) {
+                document.getElementById('emailFeedback').innerHTML = "Correct";
+                document.getElementById('emailFeedback').style.color = "green";
+            } else {
+                document.getElementById('emailFeedback').innerHTML = "Incorrect";
+                document.getElementById('emailFeedback').style.color = "red";
+            }
+
+            // Phone validation
+            var phone = document.getElementById('phone').value;
+            var phoneExp = /^[0-9]{10,15}$/;  // Adjust as per your desired length
+            if (phoneExp.test(phone)) {
+                document.getElementById('phoneFeedback').innerHTML = "Correct";
+                document.getElementById('phoneFeedback').style.color = "green";
+            } else {
+                document.getElementById('phoneFeedback').innerHTML = "Incorrect";
+                document.getElementById('phoneFeedback').style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

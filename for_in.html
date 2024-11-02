@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <script>
+    var student = {
+        name: "Ali",
+        email: "Ali@gmail.com", 
+        phone: 123456,
+        age : ()=>{
+        return 20;
+        },
+        food: ['biryani','nihari','pizza','salad'],
+        location: {
+        city: "Karachi",
+        country: "Pakistan",
+        }
+        }
+        // document.write(student.location.city,"<br>");
+        // document.write(student.location.country,"<br>");
+        // document.write(student.name,"<br>");
+        // document.write(student.email,"<br>");
+        // document.write(student.age(),"<br>");
+        // document.write(student.food,"<br>");
+         
+
+       
+for (const key of Object.keys(student)) {
+document.write(key," ",student[key], "<br>");
+}
+
+for (const value of Object.values(student)) {
+     document.write(value, "<br>");
+}
+
+        
+            </script>
+</body>
+</html>

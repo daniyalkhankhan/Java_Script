@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 500px;
+            height: 200px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #b251f9;
+            border-radius: 20px;
+        }
+        .container input{
+            height: 30px;
+            border-radius: 10px;
+            border: 0;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+        <label for="">Inch</label><br>
+        <input type="text" name="" id="inch">
+    </div>
+    <div>
+        <label for="">feet</label><br>
+        <input type="text" name="" id="feet">
+    </div>
+    </div>
+<script>
+    var Inch = document.getElementById('inch');
+    var feet = document.getElementById('feet');
+
+    Inch.addEventListener('input',function(){
+var i =this.value;
+var f =i/12;
+feet.value = f;
+var Inch = document.getElementById('inch');
+    var feet = document.getElementById('feet');
+    })
+    feet.addEventListener('input',function(){
+var f =this.value;
+var i =f/12;
+inch.value = i;
+
+    })
+</script>
+</body>
+</html>
